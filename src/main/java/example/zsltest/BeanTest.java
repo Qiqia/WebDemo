@@ -10,7 +10,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class BeanTest {
     public static void main(String[] args){
-        ApplicationContext act= new ClassPathXmlApplicationContext("applicationContext.xml");
+        ApplicationContext act= new ClassPathXmlApplicationContext("spring/applicationContext.xml");
         Person person = act.getBean("chinese", Chinese.class);
 
         person.useAxe();
