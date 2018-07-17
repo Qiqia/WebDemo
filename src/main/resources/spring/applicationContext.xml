@@ -8,7 +8,6 @@
     <bean id="personService" class="example.service.PersonService">
         <property name="name" value="zsl" />
     </bean>
-
     <bean id="chinese" class="example.service.impl.Chinese">
         <property name="axe" ref="steelAxe"/>
     </bean>

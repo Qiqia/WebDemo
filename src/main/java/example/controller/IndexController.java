@@ -3,8 +3,6 @@ package example.controller;
 import example.service.Person;
 import example.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -20,11 +18,15 @@ public class IndexController {
     @Autowired
     private Person english;
 
+    @Autowired
+    private Person chinese;
+
     @RequestMapping("/index.do")
     public String index(){
         personService.info();
-        System.out.println("hello world!");
+        chinese.useAxe();
         english.useAxe();
+        System.out.println("hello world!");
         return "index";
     }
 }
