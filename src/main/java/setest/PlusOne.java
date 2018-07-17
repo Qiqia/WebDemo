@@ -1,7 +1,5 @@
 package setest;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;

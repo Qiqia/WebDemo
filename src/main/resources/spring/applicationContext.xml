@@ -12,7 +12,9 @@
     <bean id="chinese" class="example.service.impl.Chinese">
         <property name="axe" ref="steelAxe"/>
     </bean>
-
+    <bean id="english" class="example.service.impl.English">
+        <property name="axe" ref="stoneAxe"/>
+    </bean>
     <bean id="stoneAxe" class="example.service.impl.StoneAxe"/>
     <bean id="steelAxe" class="example.service.impl.SteelAxe"/>
  </beans>
