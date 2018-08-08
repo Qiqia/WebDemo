@@ -40,8 +40,8 @@ cmake-build-release/
 *.iws
 
 # IntelliJ
-out/
-target/
+#out/
+#target/
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
@@ -75,7 +75,7 @@ fabric.properties
 
 # Package Files #
 *.jar
-*.war
+#*.war
 *.nar
 *.ear
 *.zip
