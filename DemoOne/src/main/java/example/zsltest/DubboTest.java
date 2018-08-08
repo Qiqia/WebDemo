@@ -10,7 +10,7 @@ import java.io.IOException;
 public class DubboTest {
     public static void main(String[] args) throws IOException{
         new ClassPathXmlApplicationContext("spring/provider.xml");
-        System.out.println("服役已经启动..");
+        System.out.println("服务已经启动..");
         System.in.read();
     }
 }
