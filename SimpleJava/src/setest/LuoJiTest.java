@@ -12,6 +12,7 @@ public class LuoJiTest {
        if (b()&&a()){
            System.out.println("执行ba");
        }
+        System.out.println(c());
     }
 
     public static boolean a(){
@@ -23,6 +24,16 @@ public class LuoJiTest {
         return false;
     }
 
+    public static int c(){
+        int a =3;
+        try{
+            a=1;
+            return a;
+        }finally{
+            a+=1;
+            System.out.println("a的值："+a);
+        }
+    }
     class TestClass{
         public TestClass(int x){
             this.g=x;
