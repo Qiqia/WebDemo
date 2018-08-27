@@ -34,6 +34,7 @@ public class LuoJiTest {
             System.out.println("a的值："+a);
         }
     }
+
     class TestClass{
         public TestClass(int x){
             this.g=x;
