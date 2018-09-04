@@ -11,6 +11,7 @@ public class BootDemoApplicationTests {
 
 	@Test
 	public void contextLoads() {
+		System.out.println("hello web");
 	}
 
 }

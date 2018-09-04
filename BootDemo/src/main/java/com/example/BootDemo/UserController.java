@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 //@RestController注解能够使项目支持Rest
 @RestController
 @SpringBootApplication
-@RequestMapping(value = "/springboot")
+@RequestMapping(value = "/springBoot")
 public class UserController {
     @RequestMapping(value = "/getUserByGet",method = RequestMethod.GET)
     String getUserByGet(@RequestParam(value = "userName")String userName){
