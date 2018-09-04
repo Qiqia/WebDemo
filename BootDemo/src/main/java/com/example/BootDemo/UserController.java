@@ -13,18 +13,19 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
     @RequestMapping(value = "/getUserByGet",method = RequestMethod.GET)
     String getUserByGet(@RequestParam(value = "userName")String userName){
-        System.out.println("Hello "+userName);
+        System.out.println("Hello " + userName);
         return "Hello "+userName;
     }
 
     @RequestMapping(value = "/getUserByPost",method = RequestMethod.POST)
     String getUserByPost(@RequestParam(value = "userName")String userName){
-        System.out.println("Hello "+userName);
+        System.out.println("Hello " + userName);
         return "Hello "+userName;
     }
 
     @RequestMapping(value = "getUserByJson",method = RequestMethod.POST)
     String getUserByJson(@RequestBody String data){
-        return "Json is " +data;
+        System.out.println("Json is " + data);
+        return "Json is " + data;
     }
 }
