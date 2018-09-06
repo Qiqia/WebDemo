@@ -7,6 +7,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class BootDemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BootDemoApplication.class, args);
+		//原始的springBoot启动
+        //SpringApplication.run(BootDemoApplication.class, args);
+		SpringApplication app = new SpringApplication(BootDemoApplication.class);
+		//用户拓展项
+		//app.setAdditionalProfiles();
+		app.run(args);
 	}
 }
