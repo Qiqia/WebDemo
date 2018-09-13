@@ -15,5 +15,6 @@ public class BeanTest {
 
         person.useAxe();
 
+
     }
 }
