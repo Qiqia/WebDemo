@@ -21,8 +21,15 @@ public class LambdaTest {
         );
 
         guiltyPersons.stream()
+                .filter(person -> person.getAge()>26)
+                .sorted((p1,p2) ->p1.getAge()-p2.getAge())
+                .forEach(p-> System.out.println(p.getFirstName()));
+
+
+        guiltyPersons.stream()
                 .filter(p-> p.getLastName().startsWith("Z"))
                 .forEach(p-> System.out.println(p.getFirstName()));
+
 
         guiltyPersons.stream()
                 .filter(p->p.getLastName().startsWith("Z"))
