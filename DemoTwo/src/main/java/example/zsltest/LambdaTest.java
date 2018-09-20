@@ -17,7 +17,6 @@ public class LambdaTest {
                 new Person("Yixing","Zhao",25),
                 new Person("Yanggui","Li",30),
                 new Person("Chao","Ma",29)
-
         );
 
         guiltyPersons.stream()
