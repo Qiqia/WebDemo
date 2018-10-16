@@ -26,6 +26,10 @@ public class EasyExcelDemo {
         demo.writeExcelTest();
     }
 
+    /**
+     * 读excel的demo
+     * @throws Exception
+     */
     public void noModelMultipleSheet() throws Exception{
         InputStream inputStream =  new FileInputStream(new File("D:/sheetdemo.xlsx"));
         try {
@@ -39,7 +43,7 @@ public class EasyExcelDemo {
                         }
                         @Override
                         public void doAfterAllAnalysed(AnalysisContext context) {
-
+                            System.out.println("已经全部解析完了");
                         }
                     });
 
@@ -57,6 +61,10 @@ public class EasyExcelDemo {
     }
 
 
+    /**
+     * 写excel的demo
+     * @throws FileNotFoundException
+     */
     public void writeExcelTest() throws FileNotFoundException{
         OutputStream outputStream = new FileOutputStream(new File("D:\\sheetdemo1.xlsx"));
         try {
@@ -76,6 +84,10 @@ public class EasyExcelDemo {
         }
     }
 
+    /**
+     * 获取需要写入的数据
+     * @return
+     */
     private List<? extends BaseRowModel> getData() {
 //        ExcelPropertyIndexModel excel = new ExcelPropertyIndexModel("xxxx","27");
 //        excel.setName("zsl");
@@ -93,6 +105,9 @@ public class EasyExcelDemo {
     }
 
 
+    /**
+     * 表头类定义
+     */
     //这个类必须要public 否则 会报NoMethodException 也就是获取不到getter和setter方法
     public class ExcelPropertyIndexModel extends BaseRowModel {
 
