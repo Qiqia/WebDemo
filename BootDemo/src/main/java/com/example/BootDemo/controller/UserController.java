@@ -1,4 +1,4 @@
-package com.example.BootDemo;
+package com.example.BootDemo.controller;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
