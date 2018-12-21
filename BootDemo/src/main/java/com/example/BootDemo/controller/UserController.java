@@ -35,8 +35,8 @@ public class UserController {
     String loginDemo(@RequestBody String data){
 
         User loginUser = getUserFromRequestData(data);
-        System.out.println("json is"+loginUser.toString());
-        return "登录用户的openid是："+loginUser.getOpenId();
+        System.out.println("json is" + loginUser.toString());
+        return "登录用户的openid是：" + loginUser.getOpenId();
     }
 
 

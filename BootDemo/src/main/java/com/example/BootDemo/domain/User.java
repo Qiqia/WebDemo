@@ -1,5 +1,6 @@
-package com.example.BootDemo.domain;
+ package com.example.BootDemo.domain;
 
+import com.alibaba.fastjson.JSON;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,4 +18,8 @@ public class User {
     @Getter
     @Setter
     private String openId;
+
+    public String toString(){
+        return JSON.toJSONString(this);
+    }
 }
