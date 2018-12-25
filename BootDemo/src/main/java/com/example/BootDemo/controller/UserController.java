@@ -4,7 +4,6 @@ import com.alibaba.fastjson.JSONObject;
 import com.example.BootDemo.domain.User;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
-import com.alibaba.fastjson.JSON;
 
 /**
  * Created by zsl on 2018/9/4.

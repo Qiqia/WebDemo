@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="1 seconds">
+    <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+        <resetJUL>true</resetJUL>
+    </contextListener>
+
+    <!-- 文件输出格式 -->
+    <property name="pattern" value="%d{yyyy-MM-dd HH:mm:ss.SSS} -%5p ${PID:-} [%15.15t] %-40.40logger{39} : %m%n" />
+    <property name="charsetEncoding" value="UTF-8" />
+    <!--<PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level %class{36} %L %M - %msg%xEx%n"/>-->
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${pattern}</pattern>
+            <charset>${charsetEncoding}</charset>
+        </encoder>
+    </appender>
+
+    <appender name="file" class="ch.qos.logback.core.FileAppender">
+        <!--<file>/home/mumu/bootdemo-service/log/app.log</file>-->
+        <file>D:\springbootlog\app.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>${pattern}</pattern>
+            <charset>${charsetEncoding}</charset>
+        </encoder>
+    </appender>
+
+
+    <appender name="dailyRollingFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!--<File>/home/mumu/bootdemo-service/log/app.log</File>-->
+        <File>D:\springbootlog\app.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <FileNamePattern>logback.%d{yyyy-MM-dd_HH}.log</FileNamePattern>
+            <!-- keep 30 days' worth of history -->
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{35} - %msg %n</Pattern>
+        </encoder>
+    </appender>
+
+    <logger name="org.springframework.web" level="debug"/>
+
+    <root level="info">
+        <appender-ref ref="console"/>
+        <appender-ref ref="dailyRollingFileAppender"/>
+        <appender-ref ref="file"/>
+    </root>
+</configuration>
+
