@@ -2,6 +2,8 @@ package com.example.BootDemo.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.example.BootDemo.domain.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 @SpringBootApplication
 @RequestMapping(value = "/springBoot")
 public class UserController {
+    private final static Logger _logger =LoggerFactory.getLogger(UserController.class);
     @RequestMapping(value = "/getUserByGet",method = RequestMethod.GET)
     String getUserByGet(@RequestParam(value = "userName")String userName){
         System.out.println("Hello " + userName);
@@ -32,9 +35,10 @@ public class UserController {
     }
     @RequestMapping(value = "loginDemo",method = RequestMethod.POST)
     String loginDemo(@RequestBody String data){
+        _logger.info("开始loninDemo");
 
         User loginUser = getUserFromRequestData(data);
-        System.out.println("json is" + loginUser.toString());
+        _logger.info("json is {}",loginUser.toString());
         return "登录用户的openid是：" + loginUser.getOpenId();
     }
 
