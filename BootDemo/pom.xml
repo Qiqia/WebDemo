@@ -61,12 +61,13 @@
 			<version>1.2.51</version>
 		</dependency>
 
-		<!-- 使用SLF4j和logback作为日志-->
+		 <!--使用SLF4j和logback作为日志-->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 			<version>${slf4j.version}</version>
 		</dependency>
+		<!--
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
@@ -77,11 +78,13 @@
 			<artifactId>jcl-over-slf4j</artifactId>
 			<version>${slf4j.version}</version>
 		</dependency>
+		-->
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
 			<version>${logback.version}</version>
 		</dependency>
+		<!--
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-core</artifactId>
@@ -91,6 +94,12 @@
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-access</artifactId>
 			<version>${logback.version}</version>
+		</dependency>
+		-->
+		<dependency>
+			<groupId>com.example</groupId>
+			<artifactId>BootDemoCore</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 
