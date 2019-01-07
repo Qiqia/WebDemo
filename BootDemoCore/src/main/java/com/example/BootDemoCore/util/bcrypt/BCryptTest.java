@@ -5,7 +5,7 @@ package com.example.BootDemoCore.util.bcrypt;
  */
 public class BCryptTest {
     public static void main(String[] args) {
-        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(8,16);
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(8);
         System.out.println(encoder.encode("19910417zhu"));
 
 
