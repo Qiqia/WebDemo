@@ -8,7 +8,7 @@ import lombok.Setter;
  * Created by zsl on 2018/12/20.
  */
 @AllArgsConstructor
-public class User {
+public class WebUser {
     @Getter
     @Setter
     private String userName;
