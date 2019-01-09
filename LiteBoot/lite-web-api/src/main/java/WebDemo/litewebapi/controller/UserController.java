@@ -4,9 +4,9 @@ import WebDemo.litecore.util.JacksonUtil;
 import WebDemo.litecore.util.ResponseUtil;
 import WebDemo.litecore.util.bcrypt.BCryptPasswordEncoder;
 import com.alibaba.fastjson.JSONObject;
-import com.example.BootDemo.dao.WebToken;
-import com.example.BootDemo.domain.WebUser;
-import com.example.BootDemo.service.WebTokenManager;
+import WebDemo.litewebapi.dao.WebToken;
+import WebDemo.litewebapi.domain.WebUser;
+import WebDemo.litewebapi.service.WebTokenManager;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.example.BootDemo.util.WebResponseCode.WEB_INVALID_ACCOUNT;
+import static WebDemo.litewebapi.util.WebResponseCode.WEB_INVALID_ACCOUNT;
 
 
 /**
@@ -74,7 +74,7 @@ public class UserController {
 
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         if(!encoder.matches(passwordFront,webUser.getPassword())){
-            return ResponseUtil.fail(WEB_INVALID_ACCOUNT,"账户密码匹配");
+            return ResponseUtil.fail(WEB_INVALID_ACCOUNT,"账户密码不匹配");
         }
 
         Integer webUserId = Integer.parseInt(webUser.getOpenId());
@@ -96,7 +96,7 @@ public class UserController {
     }
     public List<WebUser> getWebUser(){
         return new ArrayList<WebUser>() {{
-            add(new WebUser("zs","123456","456897998"));
+            add(new WebUser("zs","$2a$08$TTIofgnTC6c4jT06rT1cE./qaK/pz3wfPRTwJXprLaJ9WpbImwjBC","456897998"));
         }};
     }
 //this is a boot in linux
