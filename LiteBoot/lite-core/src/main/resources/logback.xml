@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="1 seconds">
+    <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+        <resetJUL>true</resetJUL>
+    </contextListener>
+
+    <!-- 文件输出格式 -->
+    <property name="pattern" value="%d{yyyy-MM-dd HH:mm:ss.SSS} -%5p ${PID:-} [%15.15t] %-40.40logger{39} : %m%n" />
+    <property name="charsetEncoding" value="UTF-8" />
+    <!--<PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level %class{36} %L %M - %msg%xEx%n"/>-->
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${pattern}</pattern>
+            <charset>${charsetEncoding}</charset>
+        </encoder>
+    </appender>
+
+    <!-- 这里是单个日志文件输出 在存在分期的时候 这个可以不需-->
+    <!--<appender name="file" class="ch.qos.logback.core.FileAppender">-->
+        <!--&lt;!&ndash;<file>/home/mumu/bootdemo-service/log/app.log</file>&ndash;&gt;-->
+        <!--<file>D:\springbootlog\app.log</file>-->
+        <!--<append>true</append>-->
+        <!--<encoder>-->
+            <!--<pattern>${pattern}</pattern>-->
+            <!--<charset>${charsetEncoding}</charset>-->
+        <!--</encoder>-->
+    <!--</appender>-->
+
+
+    <!--按照日期分日志文件-->
+
+    <appender name="dailyRollingFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!--<File>/home/mumu/bootdemo-service/log/app.log</File>-->
+        <File>D:\springbootlog\app.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <!--<FileNamePattern>/home/mumu/bootdemo-service/log/app.log.%d{yyyy-MM-dd_HH}</FileNamePattern>-->
+            <FileNamePattern>D:\springbootlog\app.log.%d{yyyy-MM-dd_HH}</FileNamePattern>
+            <!-- keep 30 days' worth of history -->
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <Pattern>${pattern}</Pattern>
+            <charset>${charsetEncoding}</charset>
+        </encoder>
+    </appender>
+
+    <logger name="org.springframework.web" level="debug"/>
+
+    <!--日志的打印级别，当请求级别高于这个级别的时候 才会打印出来-->
+    <!--日志级别为：TRACE < DEBUG < INFO < WARN < ERROR-->
+    <root level="info">
+        <appender-ref ref="console"/>
+        <appender-ref ref="dailyRollingFileAppender"/>
+        <!--<appender-ref ref="file"/>-->
+    </root>
+</configuration>
+
