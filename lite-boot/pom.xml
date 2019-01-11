@@ -24,9 +24,10 @@
 
     <modules>
         <module>lite-core</module>
+        <module>lite-db</module>
     <!--
 
-        <module>lite-db</module>
+
         <module>lite-wx-api</module>
       -->
 
