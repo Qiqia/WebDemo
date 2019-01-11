@@ -178,7 +178,7 @@
 			<artifactId>slf4j-api</artifactId>
 			<version>${slf4j.version}</version>
 		</dependency>
-		<!--日志系统其他相关依赖
+		<!--日志系统其他相关依赖-->
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
@@ -189,13 +189,11 @@
             <artifactId>jcl-over-slf4j</artifactId>
             <version>${slf4j.version}</version>
         </dependency>
-        -->
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
 			<version>${logback.version}</version>
 		</dependency>
-		<!--
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-core</artifactId>
@@ -206,7 +204,7 @@
             <artifactId>logback-access</artifactId>
             <version>${logback.version}</version>
         </dependency>
-        -->
+
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
