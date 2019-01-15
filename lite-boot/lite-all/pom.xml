@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.chinaums</groupId>
+		<artifactId>lite-boot</artifactId>
+		<version>1.0-SNAPSHOT</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.example</groupId>
+	<artifactId>lite-all</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>lite-all</name>
+	<description>Demo project for Spring Boot</description>
+
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+
+	<dependency>
+		<groupId>com.chinaums</groupId>
+		<artifactId>lite-core</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</dependency>
+
+	<dependency>
+		<groupId>com.chinaums</groupId>
+		<artifactId>lite-db</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</dependency>
+
+	<!--<dependency>-->
+		<!--<groupId>com.chinaums</groupId>-->
+		<!--<artifactId>lite-wx-api</artifactId>-->
+	<!--</dependency>-->
+
+	<dependency>
+		<groupId>com.chinaums</groupId>
+		<artifactId>lite-web-api</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</dependency>
+
+	</dependencies>
+	<build>
+		<plugins>
+			<!--<plugin>-->
+				<!--<artifactId>maven-resources-plugin</artifactId>-->
+				<!--<executions>-->
+					<!--<execution>-->
+						<!--<id>copy-resources</id>-->
+						<!--<phase>validate</phase>-->
+						<!--<goals>-->
+							<!--<goal>copy-resources</goal>-->
+						<!--</goals>-->
+						<!--<configuration>-->
+							<!--<outputDirectory>${basedir}/target/classes/static</outputDirectory>-->
+							<!--<resources>-->
+								<!--<resource>-->
+									<!--<directory>../litemall-admin/dist</directory>-->
+								<!--</resource>-->
+							<!--</resources>-->
+						<!--</configuration>-->
+					<!--</execution>-->
+				<!--</executions>-->
+			<!--</plugin>-->
+
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<executable>true</executable>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+						<configuration>
+							<classifier>exec</classifier>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

@@ -71,7 +71,7 @@
         <table tableName="litemall_cart">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
             <columnOverride column="specifications" javaType="java.lang.String[]"
-                            typeHandler="org.linlinjava.litemall.db.mybatis.JsonStringArrayTypeHandler"/>
+                            typeHandler="com.chinaums.mybatis.JsonStringArrayTypeHandler"/>
         </table>
         <table tableName="litemall_category">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
@@ -82,13 +82,13 @@
         <table tableName="litemall_comment">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
             <columnOverride column="pic_urls" javaType="java.lang.String[]"
-                            typeHandler="org.linlinjava.litemall.db.mybatis.JsonStringArrayTypeHandler"/>
+                            typeHandler="com.chinaums.mybatis.JsonStringArrayTypeHandler"/>
         </table>
 
         <table tableName="litemall_feedback">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
             <columnOverride column="pic_urls" javaType="java.lang.String[]"
-                            typeHandler="org.linlinjava.litemall.db.mybatis.JsonStringArrayTypeHandler"/>
+                            typeHandler="com.chinaums.mybatis.JsonStringArrayTypeHandler"/>
         </table>
 
         <table tableName="litemall_footprint">
@@ -97,7 +97,7 @@
         <table tableName="litemall_goods">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
             <columnOverride column="gallery" javaType="java.lang.String[]"
-                            typeHandler="org.linlinjava.litemall.db.mybatis.JsonStringArrayTypeHandler"/>
+                            typeHandler="com.chinaums.mybatis.JsonStringArrayTypeHandler"/>
         </table>
         <table tableName="litemall_goods_attribute">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
@@ -108,7 +108,7 @@
         <table tableName="litemall_goods_product">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
             <columnOverride column="specifications" javaType="java.lang.String[]"
-                            typeHandler="org.linlinjava.litemall.db.mybatis.JsonStringArrayTypeHandler"/>
+                            typeHandler="com.chinaums.mybatis.JsonStringArrayTypeHandler"/>
         </table>
         <table tableName="litemall_issue">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
@@ -122,9 +122,9 @@
         <table tableName="litemall_order_goods">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
             <columnOverride column="specifications" javaType="java.lang.String[]"
-                            typeHandler="org.linlinjava.litemall.db.mybatis.JsonStringArrayTypeHandler"/>
+                            typeHandler="com.chinaums.mybatis.JsonStringArrayTypeHandler"/>
             <columnOverride column="comments" javaType="java.lang.Integer[]"
-                            typeHandler="org.linlinjava.litemall.db.mybatis.JsonIntegerArrayTypeHandler"/>
+                            typeHandler="com.chinaums.mybatis.JsonIntegerArrayTypeHandler"/>
 
         </table>
         <table tableName="litemall_region">
@@ -139,7 +139,7 @@
         <table tableName="litemall_topic">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
             <columnOverride column="goods" javaType="java.lang.Integer[]"
-                            typeHandler="org.linlinjava.litemall.db.mybatis.JsonIntegerArrayTypeHandler"/>
+                            typeHandler="com.chinaums.mybatis.JsonIntegerArrayTypeHandler"/>
         </table>
         <table tableName="litemall_user">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
