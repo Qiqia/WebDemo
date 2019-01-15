@@ -26,15 +26,11 @@
         <module>lite-core</module>
         <module>lite-db</module>
     <!--
-
-
         <module>lite-wx-api</module>
       -->
-
        <module>lite-web-api</module>
-    <!--
         <module>lite-all</module>
-     -->
+
     </modules>
 
     <dependencyManagement>
