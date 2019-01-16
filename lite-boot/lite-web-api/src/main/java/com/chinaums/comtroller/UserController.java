@@ -99,7 +99,4 @@ public class UserController {
         }};
     }
 
-    private static void  register(){
-        String id =
-    }
 }
