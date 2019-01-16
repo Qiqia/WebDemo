@@ -85,7 +85,7 @@ public class UserController {
 
 
 
-    public WebUser getUserFromRequestData(String data){
+    private WebUser getUserFromRequestData(String data){
         JSONObject jsonObject = JSONObject.parseObject(data);
         String userName = jsonObject.get("userName").toString();
         String password = jsonObject.get("password").toString();
@@ -93,9 +93,13 @@ public class UserController {
 
         return new WebUser(userName,password,openId);
     }
-    public List<WebUser> getWebUser(){
+    private List<WebUser> getWebUser(){
         return new ArrayList<WebUser>() {{
             add(new WebUser("zs","$2a$08$TTIofgnTC6c4jT06rT1cE./qaK/pz3wfPRTwJXprLaJ9WpbImwjBC","456897998"));
         }};
+    }
+
+    private static void  register(){
+        String id =
     }
 }
