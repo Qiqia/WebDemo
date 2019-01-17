@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.chinaums.domain.WebToken;
 import com.chinaums.domain.WebUser;
 import com.chinaums.service.WebTokenManager;
+import com.chinaums.util.CharUtil;
 import com.chinaums.util.JacksonUtil;
 import com.chinaums.util.ResponseUtil;
 import com.chinaums.util.bcrypt.BCryptPasswordEncoder;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import static com.chinaums.util.WebResponseCode.WEB_INVALID_ACCOUNT;
 
@@ -97,6 +99,13 @@ public class UserController {
         return new ArrayList<WebUser>() {{
             add(new WebUser("zs","$2a$08$TTIofgnTC6c4jT06rT1cE./qaK/pz3wfPRTwJXprLaJ9WpbImwjBC","456897998"));
         }};
+    }
+
+    private WebUser generatorUser(){
+        UUID uuid = new UUID(32,32);
+        String id = CharUtil.getRandomNum(8);
+
+     return new WebUser("ls","afa","789");
     }
 
 }
