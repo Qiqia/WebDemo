@@ -37,14 +37,22 @@ public class UUIDtest {
         System.out.println(l4-l3);
         System.out.println(l5-l4);
         System.out.println(l6-l5);
-
-
-
     }
+
+    /**
+     * toHexString方法
+     * @param uuid
+     * @return
+     */
     private static String directlyToString(UUID uuid) {
         return Long.toHexString(uuid.getMostSignificantBits()) + Long.toHexString(uuid.getLeastSignificantBits());
     }
 
+    /**
+     * arrayCopy方法
+     * @param uuid
+     * @return
+     */
     private static String arrayCopyToString(UUID uuid) {
         char[] dest = new char[32];
         char[] src = uuid.toString().toCharArray();
@@ -56,11 +64,21 @@ public class UUIDtest {
         return new String(dest);
     }
 
+    /**
+     * subString方法
+     * @param uuid
+     * @return
+     */
     private static String subStringToString(UUID uuid) {
         String src = uuid.toString();
         return src.substring(0, 8) + src.substring(9, 13) + src.substring(14, 18) + src.substring(19, 23) + src.substring(24, 36);
     }
 
+    /**
+     * forToString方法
+     * @param uuid
+     * @return
+     */
     private static String forToString(UUID uuid) {
         char[] src = uuid.toString().toCharArray();
         char[] chars = new char[32];
@@ -73,6 +91,11 @@ public class UUIDtest {
         return new String(chars);
     }
 
+    /**
+     * 正则方式
+     * @param uuid
+     * @return
+     */
     private static String replaceToString(UUID uuid) {
         return uuid.toString().replaceAll("-", "");
     }
