@@ -16,7 +16,7 @@ public class FastJsonTest {
 
 
         FastJsonBean bean4 = JSON.parseObject(beant,FastJsonBean.class);
-        System.out.println("xiaoyi是： "+JSON.toJSONString(bean4));
+        System.out.println("xiaoer是： "+JSON.toJSONString(bean4));
 
 
 
