@@ -7,6 +7,7 @@ import com.chinaums.service.WebTokenManager;
 import com.chinaums.util.CharUtil;
 import com.chinaums.util.JacksonUtil;
 import com.chinaums.util.ResponseUtil;
+import com.chinaums.util.UUIDUtil;
 import com.chinaums.util.bcrypt.BCryptPasswordEncoder;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -78,7 +79,7 @@ public class UserController {
             return ResponseUtil.fail(WEB_INVALID_ACCOUNT,"账户密码不匹配");
         }
 
-        Integer webUserId = Integer.parseInt(webUser.getOpenId());
+        String webUserId = webUser.getUerId();
 
         WebToken webToken = WebTokenManager.generateToken(webUserId);
 
@@ -93,19 +94,21 @@ public class UserController {
         String password = jsonObject.get("password").toString();
         String openId = jsonObject.get("openId").toString();
 
-        return new WebUser(userName,password,openId);
+        return new WebUser("5665",userName,password,openId,"WebUser");
     }
     private List<WebUser> getWebUser(){
         return new ArrayList<WebUser>() {{
-            add(new WebUser("zs","$2a$08$TTIofgnTC6c4jT06rT1cE./qaK/pz3wfPRTwJXprLaJ9WpbImwjBC","456897998"));
+            add(new WebUser("456464","zs","$2a$08$TTIofgnTC6c4jT06rT1cE./qaK/pz3wfPRTwJXprLaJ9WpbImwjBC","456897998","WebUser"));
         }};
     }
 
     private WebUser generatorUser(){
-        UUID uuid = new UUID(32,32);
-        String id = CharUtil.getRandomNum(8);
+        UUID uuid = UUID.randomUUID();
+        String id = UUIDUtil.directlyToString(uuid);
+        String password = "123456";
 
-     return new WebUser("ls","afa","789");
+
+     return new WebUser(id,"afa",password,"","WebUser");
     }
 
 }

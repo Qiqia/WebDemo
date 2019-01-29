@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 public class WebToken {
     @Getter
     @Setter
-    private Integer userId;
+    private String userId;
     @Getter
     @Setter
     private String token;

@@ -12,6 +12,9 @@ import lombok.Setter;
 public class WebUser {
     @Getter
     @Setter
+    private String uerId;
+    @Getter
+    @Setter
     private String userName;
     @Getter
     @Setter
@@ -19,6 +22,9 @@ public class WebUser {
     @Getter
     @Setter
     private String openId;
+    @Getter
+    @Setter
+    private String userType;
 
     public String toString(){
         return JSON.toJSONString(this);

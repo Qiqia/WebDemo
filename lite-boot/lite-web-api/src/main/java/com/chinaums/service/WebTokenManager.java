@@ -9,9 +9,9 @@ import java.util.Map;
 
 public class WebTokenManager {
     private static Map<String, WebToken> tokenMap = new HashMap<>();
-    private static Map<Integer, WebToken> idMap = new HashMap<>();
+    private static Map<String, WebToken> idMap = new HashMap<>();
 
-    public static Integer getUserId(String token) {
+    public static String getUserId(String token) {
 
         WebToken userToken = tokenMap.get(token);
         if (userToken == null) {
@@ -28,7 +28,7 @@ public class WebTokenManager {
     }
 
 
-    public static WebToken generateToken(Integer id) {
+    public static WebToken generateToken(String id) {
         WebToken userToken = null;
 
 //        userToken = idMap.get(id);
