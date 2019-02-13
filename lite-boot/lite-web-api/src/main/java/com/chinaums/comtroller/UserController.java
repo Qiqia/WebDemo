@@ -4,10 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.chinaums.domain.WebToken;
 import com.chinaums.domain.WebUser;
 import com.chinaums.service.WebTokenManager;
-import com.chinaums.util.CharUtil;
-import com.chinaums.util.JacksonUtil;
-import com.chinaums.util.ResponseUtil;
-import com.chinaums.util.UUIDUtil;
+import com.chinaums.util.*;
 import com.chinaums.util.bcrypt.BCryptPasswordEncoder;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -98,17 +95,14 @@ public class UserController {
     }
     private List<WebUser> getWebUser(){
         return new ArrayList<WebUser>() {{
-            add(new WebUser("456464","zs","$2a$08$TTIofgnTC6c4jT06rT1cE./qaK/pz3wfPRTwJXprLaJ9WpbImwjBC","456897998","WebUser"));
+            add(new WebUser("456464","zs","$2a$08$TTIofgnTC6c4jT06rT1cE./qaK/pz3wfPRTwJXprLaJ9WpbImwjBC","456897998",Constant.UserTypeCode.WEBUSER));
         }};
     }
 
     private WebUser generatorUser(){
-        UUID uuid = UUID.randomUUID();
-        String id = UUIDUtil.directlyToString(uuid);
-        String password = "123456";
-
-
-     return new WebUser(id,"afa",password,"","WebUser");
+        String id = UUIDUtil.directlyToString(UUID.randomUUID());
+        String password = new BCryptPasswordEncoder().encode("123456");
+        return new WebUser(id,"afa",password,"", Constant.UserTypeCode.WEBUSER);
     }
 
 }
