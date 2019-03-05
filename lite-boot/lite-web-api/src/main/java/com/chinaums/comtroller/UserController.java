@@ -95,7 +95,8 @@ public class UserController {
     }
     private List<WebUser> getWebUser(){
         return new ArrayList<WebUser>() {{
-            add(new WebUser("456464","zs","$2a$08$TTIofgnTC6c4jT06rT1cE./qaK/pz3wfPRTwJXprLaJ9WpbImwjBC","456897998",Constant.UserTypeCode.WEBUSER));
+            //add(new WebUser("456464","zs","$2a$08$TTIofgnTC6c4jT06rT1cE./qaK/pz3wfPRTwJXprLaJ9WpbImwjBC","456897998",Constant.UserTypeCode.WEBUSER));
+            add(new WebUser("787879","ls","$2a$08$WMlHmJigVEUUZ70Yzk1QseDdw48eqYbhJQK8J530hbpFZjteCpVoy","456897998",Constant.UserTypeCode.WXUSER));
         }};
     }
 
