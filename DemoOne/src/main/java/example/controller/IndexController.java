@@ -38,8 +38,8 @@ public class IndexController {
     @RequestMapping("/cleanmodel.do")
     public View cleanmodel(Model model){
         model.addAttribute("aaa","aaaa");
-        //model.asMap().clear();
+        model.asMap().clear();
         System.out.println("dafa"+model.containsAttribute("aaa"));
-        return new RedirectView("http://www.testurl.com",false,false,true);
+        return new RedirectView("http://www.baidu.com",false,false,true);
     }
 }
