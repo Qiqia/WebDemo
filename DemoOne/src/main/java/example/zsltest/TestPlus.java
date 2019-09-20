@@ -12,5 +12,10 @@ public class TestPlus {
         int xxxx = -xxx;
         System.out.println(xxx);
         System.out.println(xxxx);
+
+        byte [] ss =null;
+        if(ss == null){
+            System.out.println("wanx");
+        }
     }
 }
