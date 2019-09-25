@@ -25,9 +25,9 @@ public class TestPlus {
             add(new Student("zhangsan","5"));
             add(new Student("lisi","6"));
         }};
-        list.forEach(a -> System.out.println(a.name));
+        list.forEach(a -> System.out.println(a.getName()));
 
         list.get(0).setName("wangwu");
-        list.forEach(a -> System.out.println(a.name));
+        list.forEach(a -> System.out.println(a.getName()));
     }
 }
