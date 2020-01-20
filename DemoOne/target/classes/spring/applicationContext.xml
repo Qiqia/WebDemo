@@ -16,4 +16,5 @@
     </bean>
     <bean id="stoneAxe" class="example.service.impl.StoneAxe"/>
     <bean id="steelAxe" class="example.service.impl.SteelAxe"/>
+    <bean id="noWebCLass" class="example.service.NoWebClass"/>
  </beans>

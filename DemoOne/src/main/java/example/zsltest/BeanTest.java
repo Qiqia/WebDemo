@@ -1,6 +1,8 @@
 package example.zsltest;
 
+import example.service.NoWebClass;
 import example.service.Person;
+import example.service.SList;
 import example.service.impl.Chinese;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -14,6 +16,9 @@ public class BeanTest {
         Person person = act.getBean("chinese", Chinese.class);
 
         person.useAxe();
+
+        NoWebClass noWebClass =act.getBean("noWebCLass",NoWebClass.class);
+        noWebClass.say();
 
     }
 }

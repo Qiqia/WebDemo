@@ -15,6 +15,7 @@ gen### JetBrains template
 .idea/**/tasks.xml
 .idea/**/dictionaries
 .idea/**/shelf
+*/target
 
 # Sensitive or high-churn files
 .idea/**/dataSources/
