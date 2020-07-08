@@ -22,7 +22,7 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("/home")
-@OnMethod(dnk = DataConstat.OPER_CLASS_LOGIN)
+@OnMethod(dnk = DataConstat.FSSF)
 public class IndexController {
     @Autowired
     private PersonService personService;
