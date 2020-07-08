@@ -1,8 +1,10 @@
 package example.controller;
 
+import example.common.DataConstat;
 import example.service.Person;
-import example.service.PersonService;
+import example.service.impl.PersonService;
 import example.service.SList;
+import example.utils.OnMethod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +13,8 @@ import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.view.RedirectView;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
@@ -18,6 +22,7 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("/home")
+@OnMethod(dnk = DataConstat.OPER_CLASS_LOGIN)
 public class IndexController {
     @Autowired
     private PersonService personService;
@@ -32,7 +37,8 @@ public class IndexController {
     private List<SList> sListList;
 
     @RequestMapping("/index.do")
-    public String index(){
+    @OnMethod(remark = "测试remark")
+    public String index(HttpServletRequest request, HttpServletResponse response) throws Exception{
         personService.info();
         chinese.useAxe();
         english.useAxe();
@@ -43,6 +49,10 @@ public class IndexController {
         for(SList sList:sListList){
             sList.say();
         }
+        request.setAttribute("START_TIME", "start");
+
+//            throw new Exception("dd");
+
         return "index";
     }
 

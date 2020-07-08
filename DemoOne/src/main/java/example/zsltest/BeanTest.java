@@ -1,8 +1,7 @@
 package example.zsltest;
 
-import example.service.NoWebClass;
+import example.service.impl.NoWebClass;
 import example.service.Person;
-import example.service.SList;
 import example.service.impl.Chinese;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

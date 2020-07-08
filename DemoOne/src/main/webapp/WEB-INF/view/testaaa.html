@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>表达式测试</title>
+</head>
+<body>
+<div>
+    <input  id="user_nickname" name="user_nickname" maxlength="25" placeholder="请输入网服账号"/>
+</div>
+<div>
+        <button type="button"onclick="checkUserId()"> Click Me!</button>
+
+</div>
+</body>
+<script type="text/javascript">
+    function checkUserId() {
+        var userId = document.getElementById("user_nickname").value;
+
+        if (userId == null || userId == "") {
+            alert("请输入网服账号");
+            return false;
+        }
+        if (!/^[0-9a-zA-Z]{4,25}$/.test(userId)) {
+            alert("请输入正确的网服账号");
+            return false;
+        }
+
+        if (!/^[-\da-zA-Z`=\\\[\];',./~!@#$%^&*()_+|{}:"<>?]{4,30}$/.test(userId)) {
+            alert("请输入正确的网服账号");
+            return false;
+        }
+
+        return true;
+    }
+</script>
+</html>
