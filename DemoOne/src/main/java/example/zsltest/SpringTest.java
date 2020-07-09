@@ -1,6 +1,6 @@
 package example.zsltest;
 
-import example.service.PersonService;
+import example.service.impl.PersonService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

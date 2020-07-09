@@ -2,10 +2,12 @@ package example.service;
 
 import java.lang.annotation.*;
 
+
 /**
  * Created by zsl on 2018/7/5.
  */
 public interface Person {
+    @OnMethod(remark = "Person useAxe")
     public void useAxe();
 
     /**
