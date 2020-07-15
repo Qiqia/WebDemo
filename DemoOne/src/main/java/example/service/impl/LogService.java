@@ -14,11 +14,9 @@ import java.lang.reflect.Method;
 
 
 /**
- *
  * @Aspect 实现spring aop 切面（Aspect）：
- *         一个关注点的模块化，这个关注点可能会横切多个对象。事务管理是J2EE应用中一个关于横切关注点的很好的例子。
- *         在SpringAOP中，切面可以使用通用类（基于模式的风格） 或者在普通类中以 @Aspect 注解（@AspectJ风格）来实现。
- *
+ * 一个关注点的模块化，这个关注点可能会横切多个对象。事务管理是J2EE应用中一个关于横切关注点的很好的例子。
+ * 在SpringAOP中，切面可以使用通用类（基于模式的风格） 或者在普通类中以 @Aspect 注解（@AspectJ风格）来实现。
  */
 @Component
 @Aspect
@@ -36,18 +34,19 @@ public class LogService {
     }
 
     @Before("@annotation(example.utils.OnMethod)")
-    public void beforeLog(JoinPoint point){
+    public void beforeLog(JoinPoint point) {
         System.out.println("调用之前");
     }
 
 
     @AfterReturning("onMethod()")
-    public void afterLog(){
+    public void afterLog() {
         System.out.println("调用返回之后");
     }
 
     /**
      * 方法执行时
+     *
      * @param point
      * @return
      * @throws Throwable
@@ -56,22 +55,22 @@ public class LogService {
     public Object around(ProceedingJoinPoint point) throws Throwable {
         System.out.println("切面开始了");
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
-        System.out.println("ddddddddd"+request.getAttribute("START_TIME"));
+        System.out.println("ddddddddd" + request.getAttribute("START_TIME"));
 
         String monthRemark = getonMethod(point);
         String monthName = point.getSignature().getDeclaringTypeName();
         String voidName = point.getSignature().getName();
-        System.out.println(monthRemark+"|"+monthName+"|"+voidName);
+        System.out.println(monthRemark + "|" + monthName + "|" + voidName);
         String operatingcontent = "";
         Object[] method_param = null;
         Object object;
         try {
-            method_param = point.getArgs();	//获取方法参数
+            method_param = point.getArgs();    //获取方法参数
             //String param=(String) point.proceed(point.getArgs());
             object = point.proceed();
 
-            System.out.println("momoshi"+request.getAttribute("START_TIME"));
-            System.out.println("返回结果： "+object);
+            System.out.println("momoshi" + request.getAttribute("START_TIME"));
+            System.out.println("返回结果： " + object);
         } catch (Exception e) {
             // 异常处理记录日志..log.error(e);
             throw e;
@@ -82,12 +81,14 @@ public class LogService {
 
     /**
      * 抛异常
+     *
      * @param point
      * @param ex
      */
-    @AfterThrowing(pointcut="onMethod()",throwing = "ex") //* org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter.handle(..)
-    public void afterThrowing(JoinPoint point,Exception ex) {
-        try{
+    @AfterThrowing(pointcut = "onMethod()", throwing = "ex")
+    //* org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter.handle(..)
+    public void afterThrowing(JoinPoint point, Exception ex) {
+        try {
 
             System.out.println("发生异常了");
             System.out.println(ex.getMessage());
@@ -122,7 +123,7 @@ public class LogService {
 //            }
 //            log.setLoginError(message);
 //            this.genericHibernateDao.save(log);
-        }catch (Exception e) {
+        } catch (Exception e) {
             System.out.println("抓到异常了");
         }
     }
@@ -130,6 +131,7 @@ public class LogService {
 
     /**
      * 获取方法名称
+     *
      * @param joinPoint
      * @return
      * @throws Exception
@@ -137,7 +139,7 @@ public class LogService {
     public static String getonMethod(JoinPoint joinPoint) throws Exception {
         Class<?> clazz = joinPoint.getTarget().getClass();
         OnMethod ss = clazz.getAnnotation(OnMethod.class);
-        System.out.println("dnk"+ss.dnk());
+        System.out.println("dnk" + ss.dnk());
         String name = joinPoint.getSignature().getName();
         Object[] parameterTypes = joinPoint.getArgs();
         for (Method method : clazz.getDeclaredMethods()) {
