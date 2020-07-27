@@ -5,6 +5,9 @@ public class Main {
     public static void main(String[] args) {
 //        System.out.println("Hello World!");
 //        System.out.println("\\\\\\"+"lin");
+        String sdf ="faafa.xls";
+        String[] ls = sdf.split("xls");
+        System.out.println(ls.length);
 
 
         OuterClass outerClass = new OuterClass("老大",100);
