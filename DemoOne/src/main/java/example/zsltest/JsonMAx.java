@@ -1,8 +1,8 @@
 package example.zsltest;
 
 import com.alibaba.fastjson.JSONArray;
-import net.sf.json.JSONObject;
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import org.apache.commons.lang3.time.DateFormatUtils;
 
 import java.util.Date;
@@ -47,8 +47,8 @@ public class JsonMAx {
     public static Map<String, String> jsonToMap(JSONObject json) {
         Map<String, String> map = new HashMap<>();
         for (Object key : json.keySet()) {
-            String value = json.optString((String) key);
-            map.put((String) key, value);
+//            String value = json.optString((String) key);
+//            map.put((String) key, value);
         }
         return map;
     }
