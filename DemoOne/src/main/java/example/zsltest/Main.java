@@ -10,14 +10,17 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws Exception {
+        String ddd = "fadfasdfasdgagadga";
+        ddd = ddd.substring(0,3);
+        System.out.println(ddd);
 
 
-        List<GoodBean> a = new ArrayList<GoodBean>() {{
-            add(null);
-        }};
-        for (GoodBean x : a) {
-            System.out.println(x.getId());
-        }
+//        List<GoodBean> a = new ArrayList<GoodBean>() {{
+//            add(null);
+//        }};
+//        for (GoodBean x : a) {
+//            System.out.println(x.getId());
+//        }
 //        Son son = new Son();
 //        System.out.println(son instanceof Father);
 
