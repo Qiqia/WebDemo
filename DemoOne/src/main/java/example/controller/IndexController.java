@@ -53,6 +53,8 @@ public class IndexController {
         request.setAttribute("START_TIME", "start");
 
 //            throw new Exception("dd");
+        String xadf = null;
+        System.out.println(xadf.toLowerCase());
 
         return "index";
 
