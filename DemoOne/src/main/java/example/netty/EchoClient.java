@@ -11,13 +11,8 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 import java.net.InetSocketAddress;
 
 public class EchoClient {
-    private String host;
-    private int port;
-
-    public EchoClient(String host, int port) {
-        this.host = host;
-        this.port = port;
-    }
+    private final String host ="localhost" ;
+    private final int port = 8888;
 
     public void start() throws Exception {
         EventLoopGroup group = new NioEventLoopGroup();
@@ -40,12 +35,6 @@ public class EchoClient {
     }
 
     public static void main(String[] args) throws Exception {
-        if (args.length != 2) {
-            System.out.println("Usage :" + EchoClient.class.getSimpleName() + "<host> <port>");
-            return;
-        }
-        String host = args[0];
-        int port = Integer.parseInt(args[1]);
-        new EchoClient(host, port).start();
+        new EchoClient().start();
     }
 }

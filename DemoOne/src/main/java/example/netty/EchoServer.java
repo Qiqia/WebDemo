@@ -11,19 +11,11 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 import java.net.InetSocketAddress;
 
 public class EchoServer {
-    private int port;
+    private final int port = 8888;
 
-    public EchoServer(int port) {
-        this.port = port;
-    }
 
     public static void main(String[] args) throws Exception {
-        if (args.length != 1) {
-            System.out.println("Usage: " + EchoServer.class.getSimpleName() + "<port>");
-            return;
-        }
-        int port = Integer.parseInt(args[0]);
-        new EchoServer(port).start();
+        new EchoServer().start();
 
     }
 
