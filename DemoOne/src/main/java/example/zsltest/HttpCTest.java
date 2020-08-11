@@ -38,7 +38,7 @@ public class HttpCTest {
 
 
         Map<String,String> bizMap = new HashMap<String, String>(){{
-            put("mchntOrderId","order.getMerOrderId()");
+            put("mid","xxxxx");
 //            if (StringUtils.isNotBlank(order.getGoodsTradeNo())) {
 //                Goods[] goods = req.getGoods();
 //                put("body", JSON.toJSONString(goods));

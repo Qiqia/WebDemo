@@ -9,7 +9,7 @@
 
     <!-- 使用(dubbo实例中是multicast广播)zookeeper注册中心暴露发现服务地址 -->
     <!-- <dubbo:registry address="multicast://224.0.0.1:2181" /> -->
-    <dubbo:registry address="zookeeper://224.0.0.1:2181" />
+    <dubbo:registry address="zookeeper://127.0.0.1:2181" />
 
     <!-- 消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样 -->
     <dubbo:application name="dubbo-ch1-consumer" />
